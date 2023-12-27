@@ -31,3 +31,4 @@ coverage
 
 *.env
 .firebase
+package-lock.json

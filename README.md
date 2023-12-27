@@ -23,7 +23,13 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+> Make sure you are using the Node 20.6.1 or latest.
+
 ```sh
+# Install vue in your machine
+npm install -g @vue/cli
+
+# Install packages
 npm install
 ```
 
