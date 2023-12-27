@@ -1,5 +1,5 @@
 <template>
-    <li>
+    <li :class="{ 'disabled': isDisabled }">
         <component :is="icon" class="mr-4 h-6 w-6"/>
         <router-link to="route">{{ name }}</router-link>
     </li>
@@ -21,7 +21,12 @@ props: {
     route: {
         type: String,
         required: true
-    }},
+    },
+    isDisabled: {
+        type: Boolean,
+        default: false
+    }
+}
 });
 
 </script>

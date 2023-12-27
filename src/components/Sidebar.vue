@@ -4,7 +4,7 @@
             <!-- <img src="/logo.png" alt="logo" /> -->
         </div>
         <ol class="sidebar-links">
-            <SidebarItem v-for="link in links" :key="link.name" :name="link.name" :route="link.route" :icon="link.icon" />
+            <SidebarItem v-for="link in links" :key="link.name" :name="link.name" :route="link.route" :icon="link.icon" :isDisabled="link.disabled" />
         </ol>
     </nav>
 </template>
@@ -26,7 +26,7 @@ export default defineComponent({
     components: {SidebarItem},
     setup() {
         const links = ref<Link[]>([
-            { name: 'Dashboard', icon: Square3Stack3DIcon, route: '/', disabled: true },
+            { name: 'Dashboard', icon: Square3Stack3DIcon, route: '/', disabled: false },
             { name: 'Appointments', icon: UserIcon, route: '/', disabled: true },
             { name: 'Book vet appointment', icon: ClipboardDocumentListIcon, route: '/', disabled: true },
             { name: 'Prescriptions', icon: PencilSquareIcon, route: '/', disabled: true },
