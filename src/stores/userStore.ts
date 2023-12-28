@@ -7,6 +7,8 @@ export const useUserStore = defineStore('user', {
   }),
   getters: {
     isLoggedIn: (state) => !!state.user,
+    getPetsList: (state) => state.user ? state.user.pets : [],
+    getUser: (state) => state.user
   },
   actions: {
     async fetchUser() {
