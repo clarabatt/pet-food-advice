@@ -3,20 +3,28 @@
   <div class="main-panel">
     <Menubar />
     <main>
-        <RouterView />
+      <RouterView />
     </main>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, onMounted } from 'vue'
+import { RouterView } from 'vue-router'
 import Sidebar from './components/Sidebar.vue'
 import Menubar from './components/Menubar.vue'
-import { RouterView } from 'vue-router'
+import { useUserStore } from '@/stores/userStore'
 
 export default defineComponent({
   name: 'App',
-  components: { Sidebar, Menubar, RouterView }
+  components: { Sidebar, Menubar, RouterView },
+  setup() {
+    const userStore = useUserStore()
+    onMounted(() => {
+      userStore.fetchUser()
+    })
+    return {}
+  }
 })
 </script>
 
