@@ -1,8 +1,10 @@
 <template>
-  <li :class="{ disabled: link.disabled }">
-    <component :is="link.icon" class="mr-4 h-6 w-6" />
-    <router-link to="link.route">{{ link.name }}</router-link>
-  </li>
+    <router-link :to="link.route">
+    <li :class="{ disabled: link.disabled }">
+        <component :is="link.icon" class="mr-4 h-6 w-6" />
+            {{ link.name }}
+    </li>
+    </router-link>
 </template>
 
 <script lang="ts">
