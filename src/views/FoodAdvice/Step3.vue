@@ -1,11 +1,11 @@
 <template>
-    DOG Food
+    Step 3
 </template>
   
 <script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-name: 'DogFoodAdviceView'
+name: 'Step3View'
 })
 </script>

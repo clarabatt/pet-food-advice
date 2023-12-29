@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/Home.vue'
-import DogFoodAdvice from '../views/DogFoodAdvice.vue'
+import DogFoodAdvice from '../views/FoodAdvice/FoodAdvice.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
