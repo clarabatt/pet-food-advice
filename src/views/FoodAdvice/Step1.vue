@@ -1,7 +1,13 @@
 <template>
   <h1>Who is the food for?</h1>
   <div class="pets">
-    <PickingPet v-for="pet in pets" :key="pet.id" :name="pet.name" :species="pet.species" />
+    <PickingPet
+      @click="setPet(pet)"
+      v-for="pet in pets"
+      :key="pet.id"
+      :name="pet.name"
+      :species="pet.species"
+    />
     <AddPet />
   </div>
 </template>
@@ -15,7 +21,14 @@ import AddPet from '@/components/AddPet.vue'
 export default defineComponent({
   name: 'Step1View',
   props: {
-    pets: Array as PropType<Pet[]>
+    pets: {
+      type: Array as PropType<Pet[]>,
+      required: true
+    },
+    setPet: {
+      type: Function as PropType<(pet: Pet) => void>,
+      required: true
+    }
   },
   components: {
     PickingPet,

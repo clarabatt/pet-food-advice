@@ -1,5 +1,5 @@
 <template>
-  <Step1 v-if="formState.currentStep === 1" :pets="formState.availablePets" />
+  <Step1 v-if="formState.currentStep === 1" :pets="formState.availablePets" :setPet="setPet" />
   <Step2 v-if="formState.currentStep === 2" />
   <Step3 v-if="formState.currentStep === 3" />
 
