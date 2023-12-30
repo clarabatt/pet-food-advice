@@ -1,39 +1,21 @@
 <template>
   <div class="token">
     <div class="pet-image">
-      <img v-if="pictureUrl" :src="pictureUrl" alt="pet picture" />
-      <img
-        v-else-if="species === 'DOG'"
-        class="placeholder"
-        alt="pet icon placeholder"
-        :src="dogIcon"
-      />
+      <PlusIcon style="color: #42389d; height: 2.3rem" />
     </div>
-    <p class="pet-name">{{ name }}</p>
+    <p class="pet-name">Add pet</p>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue'
 import dogIcon from '@/assets/icons/dog.png'
+import { PlusIcon } from '@heroicons/vue/24/outline'
 
 export default defineComponent({
   name: 'PickingPetComponent',
-  components: {},
-  props: {
-    name: {
-      type: String,
-      required: true
-    },
-    pictureUrl: {
-      type: String,
-      required: false
-    },
-    species: {
-      type: String,
-      required: true
-    }
-  },
+  components: { PlusIcon },
+  props: {},
   data() {
     return {
       dogIcon
@@ -85,6 +67,6 @@ export default defineComponent({
   text-align: center;
   margin-top: 0.5rem;
   font-weight: 400;
-  color: black;
+  color: rgb(66 56 157);
 }
 </style>
