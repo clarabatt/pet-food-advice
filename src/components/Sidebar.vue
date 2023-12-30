@@ -48,7 +48,7 @@ export default defineComponent({
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 256px;
+  width: 18rem;
   height: 100vh;
   background-color: #423898;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

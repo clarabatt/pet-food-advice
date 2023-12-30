@@ -1,10 +1,10 @@
 <template>
-    <router-link :to="link.route">
+  <router-link :to="link.route">
     <li :class="{ disabled: link.disabled }">
-        <component :is="link.icon" class="mr-4 h-6 w-6" />
-            {{ link.name }}
+      <component :is="link.icon" class="mr-4 h-6 w-6" />
+      {{ link.name }}
     </li>
-    </router-link>
+  </router-link>
 </template>
 
 <script lang="ts">
@@ -27,8 +27,9 @@ export default defineComponent({
 
 li {
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 1rem;
+  line-height: 1.5rem;
   font-family: 'Inter', sans-serif;
   padding: 8px;
   margin-top: 4px;
