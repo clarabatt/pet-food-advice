@@ -2,9 +2,9 @@
   <Step1 v-if="formState.currentStep === 1" :pets="formState.availablePets" :setPet="setPet" />
   <Step2 v-if="formState.currentStep === 2" />
   <Step3 v-if="formState.currentStep === 3" />
-
+  <!-- 
   <button v-if="formState.currentStep > 1" @click="goToPreviousStep">Prev</button>
-  <button v-if="formState.currentStep < totalSteps" @click="goToNextStep">Next</button>
+  <button v-if="formState.currentStep < totalSteps" @click="goToNextStep">Next</button> -->
 </template>
 
 <script lang="ts">
@@ -30,6 +30,7 @@ export default defineComponent({
 
     const setPet = (pet: Pet) => {
       formState.chosedPet = pet
+      goToNextStep()
     }
 
     const goToNextStep = () => {
