@@ -22,7 +22,7 @@ import {
   ClipboardDocumentListIcon
 } from '@heroicons/vue/24/outline'
 import SidebarItem from './SidebarItem.vue'
-import type Link from '@/types/Utils'
+import type { Link } from '@/types/Utils'
 
 export default defineComponent({
   name: 'SidebarComponent',

@@ -9,7 +9,7 @@
 
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue'
-import type Link from '@/types/Utils'
+import type { Link } from '@/types/Utils'
 
 export default defineComponent({
   name: 'SidebarItemComponent',
