@@ -49,7 +49,7 @@ export default defineComponent({
   display: flex;
   flex-direction: column;
   width: 18rem;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #423898;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
