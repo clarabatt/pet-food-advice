@@ -5,18 +5,28 @@
     <div class="conditions">
       <ConditionToken v-for="condition in conditions" :key="condition" :name="condition" />
     </div>
+    <ButtonComponent @click="goToNextStep">Next</ButtonComponent>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref } from 'vue'
+import { defineComponent, ref, PropType } from 'vue'
 import ConditionToken from '@/components/ConditionToken.vue'
+import ButtonComponent from '@/components/Button.vue'
 
 export default defineComponent({
   name: 'Step2View',
   props: {
     petName: {
       type: String,
+      required: true
+    },
+    setConditions: {
+      type: Function as PropType<(l: String[]) => void>,
+      required: true
+    },
+    goToNextStep: {
+      type: Function as PropType<() => void>,
       required: true
     }
   },
@@ -34,7 +44,7 @@ export default defineComponent({
     ])
     return { conditions }
   },
-  components: { ConditionToken }
+  components: { ConditionToken, ButtonComponent }
 })
 </script>
 
