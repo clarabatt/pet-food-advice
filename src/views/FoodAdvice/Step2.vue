@@ -60,7 +60,6 @@ export default defineComponent({
 
 h1 {
   text-align: center;
-  margin-top: 6rem;
   width: 100%;
 }
 
@@ -71,5 +70,9 @@ h1 {
   align-items: center;
   margin-top: 2rem;
   max-width: 66%;
+}
+
+.btn {
+  margin-top: 2rem;
 }
 </style>
