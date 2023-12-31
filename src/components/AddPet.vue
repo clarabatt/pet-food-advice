@@ -13,7 +13,7 @@ import dogIcon from '@/assets/icons/dog.png'
 import { PlusIcon } from '@heroicons/vue/24/outline'
 
 export default defineComponent({
-  name: 'PickingPetComponent',
+  name: 'PetTokenComponent',
   components: { PlusIcon },
   props: {},
   data() {

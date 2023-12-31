@@ -1,7 +1,7 @@
 <template>
   <h1>Who is the food for?</h1>
   <div class="pets">
-    <PickingPet
+    <PetToken
       @click="setPet(pet)"
       v-for="pet in pets"
       :key="pet.id"
@@ -15,7 +15,7 @@
 <script lang="ts">
 import { defineComponent, PropType } from 'vue'
 import { Pet } from '@/types'
-import PickingPet from '@/components/PickingPet.vue'
+import PetToken from '@/components/PetToken.vue'
 import AddPet from '@/components/AddPet.vue'
 
 export default defineComponent({
@@ -31,7 +31,7 @@ export default defineComponent({
     }
   },
   components: {
-    PickingPet,
+    PetToken,
     AddPet
   }
 })

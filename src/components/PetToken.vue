@@ -18,7 +18,7 @@ import { defineComponent } from 'vue'
 import dogIcon from '@/assets/icons/dog.png'
 
 export default defineComponent({
-  name: 'PickingPetComponent',
+  name: 'PetTokenComponent',
   components: {},
   props: {
     name: {
