@@ -3,35 +3,33 @@
     <h1>Does {{ petName }} have any of those conditions?</h1>
     <p>Choose all that apply:</p>
     <div class="conditions">
-      <ConditionToken v-for="condition in conditions" :key="condition" :name="condition" />
+      <ConditionToken
+        v-for="condition in conditionsRef"
+        :key="condition"
+        :name="condition"
+        @click="toggleCondition(condition)"
+      />
     </div>
-    <ButtonComponent @click="goToNextStep">Next</ButtonComponent>
+    <ButtonComponent :handleClick="goToNextStep">Next</ButtonComponent>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, PropType } from 'vue'
+import { defineComponent, ref, computed } from 'vue'
+import { useRecommendationStore } from '@/stores/recommendationStore'
 import ConditionToken from '@/components/ConditionToken.vue'
 import ButtonComponent from '@/components/Button.vue'
 
 export default defineComponent({
   name: 'Step2View',
   props: {
-    petName: {
-      type: String,
-      required: true
-    },
-    setConditions: {
-      type: Function as PropType<(l: String[]) => void>,
-      required: true
-    },
-    goToNextStep: {
-      type: Function as PropType<() => void>,
-      required: true
-    }
+    petName: String
   },
   setup() {
-    const conditions = ref<String[]>([
+    const recommendationStore = useRecommendationStore()
+    const conditions = computed(() => recommendationStore.petConditions)
+
+    const conditionsRef = ref<String[]>([
       'Allergies or Food Sensitivities',
       'Diabetes',
       'Digestive issues',
@@ -42,7 +40,18 @@ export default defineComponent({
       'Heart Disease',
       'Skin/Coat problems'
     ])
-    return { conditions }
+
+    const toggleCondition = (condition: String) => {
+      if (conditions.value.includes(condition)) {
+        recommendationStore.removeCondition(condition)
+      } else {
+        recommendationStore.addCondition(condition)
+      }
+    }
+
+    const goToNextStep = () => recommendationStore.goToNextStep()
+
+    return { conditionsRef, conditions, toggleCondition, goToNextStep }
   },
   components: { ConditionToken, ButtonComponent }
 })

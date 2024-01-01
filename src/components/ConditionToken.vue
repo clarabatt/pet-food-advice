@@ -1,5 +1,5 @@
 <template>
-  <div class="token">
+  <div :class="['token', { active: isActive }]" @click="handleClick">
     <div class="condition-icon">
       <!-- <img v-if="pictureUrl" :src="pictureUrl" alt="pet picture" />
       <img
@@ -14,7 +14,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
+import { defineComponent, computed } from 'vue'
+import { useRecommendationStore } from '@/stores/recommendationStore'
 import { Icon } from '@/types'
 import dogIcon from '@/assets/icons/dog.png'
 
@@ -34,6 +35,29 @@ export default defineComponent({
       type: Object as Icon,
       required: false
     }
+  },
+  setup(props) {
+    const recommendationStore = useRecommendationStore()
+
+    const isActive = computed(() => {
+      return recommendationStore.petConditions.includes(props.name)
+    })
+
+    const handleClick = () => {
+      console.log('Before toggling condition:', props.name, 'Active:', isActive.value)
+
+      if (isActive.value) {
+        recommendationStore.removeCondition(props.name)
+        console.log('Removed condition:', props.name)
+      } else {
+        recommendationStore.addCondition(props.name)
+        console.log('Added condition:', props.name)
+      }
+
+      console.log('Updated conditions:', recommendationStore.petConditions)
+    }
+
+    return { isActive, handleClick }
   },
   data() {
     return {
@@ -59,6 +83,10 @@ export default defineComponent({
 }
 
 .token:hover {
+  outline: solid 2px rgb(104 117 245);
+  transition: all 0.15s ease-in-out;
+}
+.active {
   outline: solid 2px rgb(104 117 245);
   transition: all 0.15s ease-in-out;
 }
