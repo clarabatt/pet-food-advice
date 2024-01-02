@@ -1,29 +1,85 @@
 <template>
   <div :class="['token', { isTokenActive: isActive }]" @click="handleClick">
     <div class="condition-icon">
-      <!-- <img v-if="pictureUrl" :src="pictureUrl" alt="pet picture" />
+      <img v-if="iconUrl" :src="iconUrl" alt="icon" />
       <img
-        v-else-if="species === 'DOG'"
-        class="placeholder"
-        alt="pet icon placeholder"
-        :src="dogIcon"
-      /> -->
+        v-else-if="name === 'Allergies or Food Sensitivities'"
+        class="icon"
+        alt="whealthy with a block icon on it"
+        :src="condition_diet_icon"
+      />
+      <img
+        v-else-if="name === 'Diabetes'"
+        class="icon"
+        alt="blood sample"
+        :src="condition_diabetes_icon"
+      />
+      <img
+        v-else-if="name === 'Digestive issues'"
+        class="icon"
+        alt="intestine with a check icon on it"
+        :src="condition_digestive_icon"
+      />
+      <img
+        v-else-if="name === 'Dental issues'"
+        class="icon"
+        alt="tooth with a plus icon on it"
+        :src="condition_dental_icon"
+      />
+      <img
+        v-else-if="name === 'Mobility concerns'"
+        class="icon"
+        alt="Two bones close to each other"
+        :src="condition_joint_icon"
+      />
+      <img
+        v-else-if="name === 'Heart Disease'"
+        class="icon"
+        alt="heart with a pulse"
+        :src="condition_heart_icon"
+      />
+      <img
+        v-else-if="name === 'Skin/Coat problems'"
+        class="icon"
+        alt="skin with a hair growing icon"
+        :src="condition_skin_icon"
+      />
+      <img
+        v-else-if="name === 'Urinary problems'"
+        class="icon"
+        alt="kidneys"
+        :src="condition_kidney_icon"
+      />
+      <img
+        v-else-if="name === 'Overweight'"
+        class="icon"
+        alt="scale indicating overweight"
+        :src="condition_overweight_icon"
+      />
     </div>
     <p class="condition-name">{{ name }}</p>
   </div>
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue'
-import { Icon } from '@/types'
-import dogIcon from '@/assets/icons/dog.png'
+import { defineComponent, type PropType } from 'vue'
+import { Icon, PetCondition } from '@/types'
+import condition_dental_icon from '@/assets/icons/condition_dental.png'
+import condition_diabetes_icon from '@/assets/icons/condition_diabetes.png'
+import condition_diet_icon from '@/assets/icons/condition_diet.png'
+import condition_digestive_icon from '@/assets/icons/condition_digestive.png'
+import condition_heart_icon from '@/assets/icons/condition_heart.png'
+import condition_joint_icon from '@/assets/icons/condition_joint.png'
+import condition_kidney_icon from '@/assets/icons/condition_kidney.png'
+import condition_skin_icon from '@/assets/icons/condition_skin.png'
+import condition_overweight_icon from '@/assets/icons/condition_overweight.png'
 
 export default defineComponent({
   name: 'ConditionTokenComponent',
   components: {},
   props: {
     name: {
-      type: String,
+      type: String as PropType<PetCondition>,
       required: true
     },
     iconUrl: {
@@ -47,7 +103,15 @@ export default defineComponent({
   },
   data() {
     return {
-      dogIcon
+      condition_dental_icon,
+      condition_diabetes_icon,
+      condition_diet_icon,
+      condition_digestive_icon,
+      condition_heart_icon,
+      condition_joint_icon,
+      condition_kidney_icon,
+      condition_skin_icon,
+      condition_overweight_icon
     }
   }
 })
