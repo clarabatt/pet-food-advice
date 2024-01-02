@@ -13,7 +13,7 @@
 import { defineComponent, ref, computed, reactive } from 'vue'
 import { useUserStore } from '@/stores/userStore'
 import { useRecommendationStore } from '@/stores/recommendationStore'
-import { Pet } from '@/types'
+import type { Pet } from '@/types/Pet'
 import { ArrowLeftIcon } from '@heroicons/vue/24/outline'
 
 import Step1 from './Step1.vue'
