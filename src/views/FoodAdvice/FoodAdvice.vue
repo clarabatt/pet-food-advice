@@ -25,7 +25,7 @@ export default defineComponent({
 
     const totalSteps = ref<Number>(3)
     const state = reactive({
-      currentStep: 2
+      currentStep: 1
     })
 
     const availablePets = computed(() => userStore.getPetsList)
