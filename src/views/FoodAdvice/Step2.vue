@@ -12,6 +12,11 @@
       />
     </div>
     <ButtonComponent :handleClick="goToNextStep">Next</ButtonComponent>
+
+    <div class="icons-credit">
+      Icons made by
+      <a target="_blank" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+    </div>
   </div>
 </template>
 
@@ -83,5 +88,10 @@ h1 {
 
 .btn {
   margin-top: 2rem;
+}
+
+.icons-credit {
+  margin-top: 4rem;
+  font-size: 0.6rem;
 }
 </style>
