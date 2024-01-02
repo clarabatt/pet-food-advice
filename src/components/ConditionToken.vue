@@ -1,5 +1,5 @@
 <template>
-  <div :class="['token', { active: isActive }]" @click="handleClick">
+  <div :class="['token', { isTokenActive: isActive }]" @click="handleClick">
     <div class="condition-icon">
       <!-- <img v-if="pictureUrl" :src="pictureUrl" alt="pet picture" />
       <img
@@ -14,8 +14,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
-import { useRecommendationStore } from '@/stores/recommendationStore'
+import { defineComponent } from 'vue'
 import { Icon } from '@/types'
 import dogIcon from '@/assets/icons/dog.png'
 
@@ -34,30 +33,17 @@ export default defineComponent({
     icon: {
       type: Object as Icon,
       required: false
+    },
+    isActive: {
+      type: Boolean,
+      required: false,
+      default: false
     }
   },
-  setup(props) {
-    const recommendationStore = useRecommendationStore()
-
-    const isActive = computed(() => {
-      return recommendationStore.petConditions.includes(props.name)
-    })
-
-    const handleClick = () => {
-      console.log('Before toggling condition:', props.name, 'Active:', isActive.value)
-
-      if (isActive.value) {
-        recommendationStore.removeCondition(props.name)
-        console.log('Removed condition:', props.name)
-      } else {
-        recommendationStore.addCondition(props.name)
-        console.log('Added condition:', props.name)
-      }
-
-      console.log('Updated conditions:', recommendationStore.petConditions)
+  methods: {
+    handleClick() {
+      this.$emit('childEvent', this.name)
     }
-
-    return { isActive, handleClick }
   },
   data() {
     return {
@@ -86,7 +72,7 @@ export default defineComponent({
   outline: solid 2px rgb(104 117 245);
   transition: all 0.15s ease-in-out;
 }
-.active {
+.isTokenActive {
   outline: solid 2px rgb(104 117 245);
   transition: all 0.15s ease-in-out;
 }
@@ -109,3 +95,4 @@ export default defineComponent({
   color: black;
 }
 </style>
+@/sfc

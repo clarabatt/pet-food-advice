@@ -50,3 +50,4 @@ h1 {
   margin-top: 2rem;
 }
 </style>
+@/sfc

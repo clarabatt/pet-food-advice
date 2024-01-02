@@ -1,13 +1,14 @@
 <template>
   <div class="conditions-step">
-    <h1>Does {{ petName }} have any of those conditions?</h1>
+    <h1>Does {{ pet.name }} have any of those conditions?</h1>
     <p>Choose all that apply:</p>
     <div class="conditions">
       <ConditionToken
         v-for="condition in conditionsRef"
-        :key="condition"
-        :name="condition"
-        @click="toggleCondition(condition)"
+        :key="condition.toString()"
+        :name="condition.toString()"
+        :isActive="conditions.includes(condition)"
+        @childEvent="toggleCondition"
       />
     </div>
     <ButtonComponent :handleClick="goToNextStep">Next</ButtonComponent>
@@ -23,10 +24,14 @@ import ButtonComponent from '@/components/Button.vue'
 export default defineComponent({
   name: 'Step2View',
   props: {
-    petName: String
+    goToNextStep: {
+      type: Function,
+      required: true
+    }
   },
   setup() {
     const recommendationStore = useRecommendationStore()
+    const pet = computed(() => recommendationStore.selectedPet)
     const conditions = computed(() => recommendationStore.petConditions)
 
     const conditionsRef = ref<String[]>([
@@ -42,16 +47,11 @@ export default defineComponent({
     ])
 
     const toggleCondition = (condition: String) => {
-      if (conditions.value.includes(condition)) {
-        recommendationStore.removeCondition(condition)
-      } else {
-        recommendationStore.addCondition(condition)
-      }
+      console.log('parent ', 'click')
+      recommendationStore.toggleCondition(condition)
     }
 
-    const goToNextStep = () => recommendationStore.goToNextStep()
-
-    return { conditionsRef, conditions, toggleCondition, goToNextStep }
+    return { conditionsRef, pet, conditions, toggleCondition }
   },
   components: { ConditionToken, ButtonComponent }
 })
