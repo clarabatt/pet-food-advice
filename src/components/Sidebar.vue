@@ -18,10 +18,11 @@ import {
   Cog6ToothIcon,
   LifebuoyIcon,
   UserIcon,
+  SparklesIcon,
   ClipboardDocumentListIcon
 } from '@heroicons/vue/24/outline'
 import SidebarItem from './SidebarItem.vue'
-import type Link from '@/types/Utils'
+import type { Link } from '@/types/Utils'
 
 export default defineComponent({
   name: 'SidebarComponent',
@@ -31,6 +32,7 @@ export default defineComponent({
       { name: 'Dashboard', icon: Square3Stack3DIcon, route: '/', disabled: false },
       { name: 'Appointments', icon: UserIcon, route: '/', disabled: true },
       { name: 'Book vet appointment', icon: ClipboardDocumentListIcon, route: '/', disabled: true },
+      { name: 'Food Advice', icon: SparklesIcon, route: '/food-advice', disabled: false },
       { name: 'Prescriptions', icon: PencilSquareIcon, route: '/', disabled: true },
       { name: 'Notifications', icon: BellIcon, route: '/', disabled: true },
       { name: 'Help', icon: LifebuoyIcon, route: '/', disabled: true },
@@ -46,8 +48,8 @@ export default defineComponent({
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 256px;
-  height: 100vh;
+  width: 18rem;
+  min-height: 100vh;
   background-color: #423898;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
