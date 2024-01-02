@@ -22,6 +22,7 @@
 
 <script lang="ts">
 import { defineComponent, ref, computed } from 'vue'
+import type { PetCondition } from '@/types/Pet'
 import { useRecommendationStore } from '@/stores/recommendationStore'
 import ConditionToken from '@/components/ConditionToken.vue'
 import ButtonComponent from '@/components/Button.vue'
@@ -39,7 +40,7 @@ export default defineComponent({
     const pet = computed(() => recommendationStore.selectedPet)
     const conditions = computed(() => recommendationStore.petConditions)
 
-    const conditionsRef = ref<String[]>([
+    const conditionsRef = ref<PetCondition[]>([
       'Allergies or Food Sensitivities',
       'Diabetes',
       'Digestive issues',
