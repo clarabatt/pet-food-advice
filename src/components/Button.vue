@@ -1,5 +1,5 @@
 <template>
-  <button type="button" class="btn">
+  <button type="button" class="btn" @click="handleClick">
     <slot></slot>
   </button>
 </template>
@@ -10,10 +10,10 @@ import { defineComponent } from 'vue'
 export default defineComponent({
   name: 'ButtonComponent',
   components: {},
-  props: {
-    handleClick: {
-      type: Function,
-      required: true
+  props: {},
+  methods: {
+    handleClick() {
+      this.$emit('click')
     }
   }
 })

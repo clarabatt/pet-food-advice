@@ -11,7 +11,7 @@
         @childEvent="toggleCondition"
       />
     </div>
-    <ButtonComponent :handleClick="goToNextStep">Next</ButtonComponent>
+    <ButtonComponent @click="goToNextStep">Next</ButtonComponent>
 
     <div class="icons-credit">
       Icons made by
@@ -31,7 +31,7 @@ export default defineComponent({
   name: 'Step2View',
   props: {
     goToNextStep: {
-      type: Function,
+      type: Function as (...args: any[]) => void,
       required: true
     }
   },
