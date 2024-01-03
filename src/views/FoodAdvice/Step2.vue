@@ -1,17 +1,17 @@
 <template>
   <div class="conditions-step">
-    <h1>Does {{ pet.name }} have any of those conditions?</h1>
+    <h1>Does {{ pet ? pet.name : 'your pet' }} have any of those conditions?</h1>
     <p>Choose all that apply:</p>
     <div class="conditions">
       <ConditionToken
         v-for="condition in conditionsRef"
-        :key="condition.toString()"
-        :name="condition.toString()"
+        :key="condition"
+        :name="condition"
         :isActive="conditions.includes(condition)"
         @childEvent="toggleCondition"
       />
     </div>
-    <ButtonComponent @click="goToNextStep">Next</ButtonComponent>
+    <ButtonComponent @click="concludeStep">Next</ButtonComponent>
 
     <div class="icons-credit">
       Icons made by
@@ -21,7 +21,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, ref, computed } from 'vue'
+import { defineComponent, ref, computed, type PropType } from 'vue'
 import type { PetCondition } from '@/types/Pet'
 import { useRecommendationStore } from '@/stores/recommendationStore'
 import ConditionToken from '@/components/ConditionToken.vue'
@@ -31,11 +31,11 @@ export default defineComponent({
   name: 'Step2View',
   props: {
     goToNextStep: {
-      type: Function as (...args: any[]) => void,
+      type: Function as PropType<() => void>,
       required: true
     }
   },
-  setup() {
+  setup(props) {
     const recommendationStore = useRecommendationStore()
     const pet = computed(() => recommendationStore.selectedPet)
     const conditions = computed(() => recommendationStore.petConditions)
@@ -52,12 +52,15 @@ export default defineComponent({
       'Skin/Coat problems'
     ])
 
-    const toggleCondition = (condition: String) => {
-      console.log('parent ', 'click')
+    const concludeStep = () => {
+      props.goToNextStep()
+    }
+
+    const toggleCondition = (condition: string) => {
       recommendationStore.toggleCondition(condition)
     }
 
-    return { conditionsRef, pet, conditions, toggleCondition }
+    return { conditionsRef, pet, conditions, toggleCondition, concludeStep }
   },
   components: { ConditionToken, ButtonComponent }
 })
@@ -92,7 +95,7 @@ h1 {
 }
 
 .icons-credit {
-  margin-top: 4rem;
+  margin: 4rem 0;
   font-size: 0.6rem;
 }
 </style>

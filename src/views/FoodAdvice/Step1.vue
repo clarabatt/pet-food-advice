@@ -13,8 +13,8 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, PropType } from 'vue'
-import { Pet } from '@/types'
+import { defineComponent, type PropType } from 'vue'
+import type { Pet } from '@/types/Pet'
 import PetToken from '@/components/PetToken.vue'
 import AddPet from '@/components/AddPet.vue'
 

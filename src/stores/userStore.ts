@@ -16,14 +16,14 @@ export const useUserStore = defineStore('user', {
         const response = await new Promise<User>((resolve) => {
           setTimeout(() => {
             resolve({
-              uuid: '8ba169f5-c216-4d84-ada5-fa234e91969d',
+              id: '8ba169f5-c216-4d84-ada5-fa234e91969d',
               first_name: 'Clara',
               last_name: 'Battesini',
               full_name: 'Clara Battesini',
               email: 'clarabattesini@gmail.com',
               pets: [
                 {
-                  uuid: '3eeacb5b-c0fe-4113-abba-26984c471298',
+                  id: '3eeacb5b-c0fe-4113-abba-26984c471298',
                   name: 'Lola',
                   species: 'DOG',
                   breed: 'Potcake',

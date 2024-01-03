@@ -9,8 +9,7 @@ import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'ButtonComponent',
-  components: {},
-  props: {},
+  emits: ['click'],
   methods: {
     handleClick() {
       this.$emit('click')

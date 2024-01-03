@@ -1,11 +1,11 @@
 // recommendationStore.js
 import { defineStore } from 'pinia'
-import type { Pet } from '@/types'
+import type { Pet } from '@/types/Pet'
 
 export const useRecommendationStore = defineStore('recommendationStore', {
   state: () => ({
     selectedPet: null as Pet | null,
-    petConditions: [] as String[],
+    petConditions: [] as string[],
     recommendations: [] as Object[]
   }),
 
@@ -13,19 +13,19 @@ export const useRecommendationStore = defineStore('recommendationStore', {
     selectPet(pet: Pet) {
       this.selectedPet = pet
     },
-    addCondition(condition: String) {
+    addCondition(condition: string) {
       if (!this.petConditions.includes(condition)) {
         const newConditions = [...this.petConditions, condition]
         this.petConditions = newConditions
       }
     },
-    removeCondition(condition: String) {
+    removeCondition(condition: string) {
       const index = this.petConditions.indexOf(condition)
       if (index > -1) {
         this.petConditions.splice(index, 1)
       }
     },
-    toggleCondition(condition: String) {
+    toggleCondition(condition: string) {
       if (this.petConditions.includes(condition)) {
         this.removeCondition(condition)
       } else {

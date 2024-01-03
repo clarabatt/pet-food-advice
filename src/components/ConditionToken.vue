@@ -63,7 +63,8 @@
 
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue'
-import { Icon, PetCondition } from '@/types'
+import type { PetCondition } from '@/types/Pet'
+import type { Icon } from '@/types/Utils'
 import condition_dental_icon from '@/assets/icons/condition_dental.png'
 import condition_diabetes_icon from '@/assets/icons/condition_diabetes.png'
 import condition_diet_icon from '@/assets/icons/condition_diet.png'
@@ -87,7 +88,7 @@ export default defineComponent({
       required: false
     },
     icon: {
-      type: Object as Icon,
+      type: Object as PropType<Icon>,
       required: false
     },
     isActive: {

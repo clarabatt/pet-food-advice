@@ -1,10 +1,10 @@
 export interface Pet {
-  uuid: String
-  name: String
+  id: string
+  name: string
   species: 'DOG' | 'CAT' | 'BIRD' | 'RODENT' | 'REPTILE' | 'OTHER'
-  breed: String
-  color: String
-  color_2: String | null
+  breed: string
+  color: string
+  color_2: string | null
   gender: 'FEMALE' | 'MALE' | null
   spayed_neutered: boolean
   has_photo: boolean
