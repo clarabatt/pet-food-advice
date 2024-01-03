@@ -20,6 +20,8 @@ I started to design the flow in Whimsical, a tool that I love to use to design f
 
 ## Development
 
+### Frontend
+
 I started making the project structure, installing the dependencies and setting up the project. I've used Vue3, Vue Router, Vite, Pinia, VitePress, TailwindCSS, Heroicons and Firebase Hosting, you can check more details in the [Technology Stack](/project-scope.md#technology-stack) section.
 
 With a defined project structure, I could start working on the general layout, the sidebar, main menu, and the area where the routes would be rendered. I wanted to keep it as real as possible in term of working process, so I used a github repository to keep track of the project, commiting and pushing the code as I was working on it. [You can check the project's commit history here](https://github.com/clarabatt/pet-food-advice/commits/main/). Even creating workflows to deploy my application on Firebase and using branchs and pull requests to control and organize the code I was producing.
@@ -28,7 +30,9 @@ I realized that I had to cut some scope and focus on a kind of pet as MVP. Do I 
 
 The next phase was to create the feature UI itself, at least for the first parts of the flow, the pet selection and the health conditions selection. I've created the components and the routes for these two parts, and also the global state management with Pinia, which I was pretty happy with, it's a tool very close to MobX in React, which I love to use because it keep things simple. By the way, I loved to use Vue3. I'm thinking about using it in my next projects, instead of React.
 
-After that, I've started to work on the logic of the feature, the decision tree. I've created a JSON file with the dog food samples:
+### Data and Decision Tree
+
+I've started to work on the logic of the feature, the decision tree. I've created a JSON file with the dog food samples:
 
 ```json
 {
@@ -57,3 +61,9 @@ The decision tree was a part that requires some tests. I draw the questions in m
 ![Decision Tree](./images/decision-tree-thinking.jpg)
 
 _\* That in the right corner bottom is Lola's weight track._
+
+Once with an idea of how the decision tree would work, I started to code it. I decided to use python as it has a lot of libraries to help with data manipulation and trees. I've used pandas to manipulate the data and sklearn to create the decision model. I've created a Colab Notebook to test the model and the data manipulation before using it in an API.
+
+[You can check the notebook here](https://colab.research.google.com/drive/1iEG3p1saytlS0wGL7Upbh8W7b5FDvt1t?usp=sharing)
+
+![Decision Tree Model Tests](./images/decision-tree-model.png)
