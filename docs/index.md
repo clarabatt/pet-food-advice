@@ -3,23 +3,23 @@
 layout: home
 
 hero:
-  name: "Pet Food Advice"
-  text: "A VitePress Site"
-  tagline: My great project tagline
+  name: 'Pet Food Advice'
+  tagline: A great Vue first impression
   actions:
     - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
+      text: Project Scope
+      link: /project-scope
     - theme: alt
-      text: API Examples
-      link: /api-examples
-
+      text: About me
+      link: /about
 features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  - icon: 🐶
+    title: Select a Pet
+    details: Select a pet from your list of pets
+  - icon: 🩺
+    title: Identify Health Conditions
+    details: Select health conditions your pet may have
+  - icon: 🍗
+    title: Receive a Recommendation
+    details: Based on a decision tree, receive a food recommendation for your pet
 ---
-

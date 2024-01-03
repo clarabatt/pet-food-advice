@@ -2,27 +2,19 @@ import { defineConfig } from 'vitepress'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: "Pet Food Advice",
-  description: "A VitePress Site",
+  title: 'Pet Food Advice',
+  // description: 'A VitePress Site',
   themeConfig: {
-    // https://vitepress.dev/reference/default-theme-config
     nav: [
-      { text: 'Home', link: '/' },
-      { text: 'Examples', link: '/markdown-examples' }
-    ],
-
-    sidebar: [
-      {
-        text: 'Examples',
-        items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
-        ]
-      }
+      { text: 'Project Scope', link: '/project-scope' },
+      { text: 'Vue vs React', link: '/vue-react' },
+      { text: 'Improvement', link: '/improvement' },
+      { text: 'About me', link: '/about' }
     ],
 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/clarabatt/pet-food-advice' },
+      { icon: 'linkedin', link: 'https://www.linkedin.com/in/clara-battesini/' }
     ]
   }
 })
