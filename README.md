@@ -2,6 +2,8 @@
 
 This is a project with a objective of explore Vue 3 and Vite. The project is a web application that helps a pet parent to choose and subscribe for a food service.
 
+The project is deployed and you can use the _[project link](https://pet-food-advice.web.app/)_ to access it without build in your machine.
+
 !['Pet Selection'](./docs/images/screenshot_1.png)
 !['Pet Conditions Selection'](./docs/images/screenshot_2.png)
 
