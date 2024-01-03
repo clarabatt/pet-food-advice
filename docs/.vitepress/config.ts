@@ -7,7 +7,7 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: 'Project Scope', link: '/project-scope' },
-      { text: 'Vue vs React', link: '/vue-react' },
+      { text: 'Creative Process', link: '/creative-process' },
       { text: 'Improvement', link: '/improvement' },
       { text: 'About me', link: '/about' }
     ],
