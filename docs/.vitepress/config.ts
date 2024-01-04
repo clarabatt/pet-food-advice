@@ -3,12 +3,11 @@ import { defineConfig } from 'vitepress'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'Pet Food Advice',
-  // description: 'A VitePress Site',
   themeConfig: {
     nav: [
       { text: 'Project Scope', link: '/project-scope' },
-      { text: 'Creative Process', link: '/creative-process' },
-      { text: 'Improvement', link: '/improvement' },
+      { text: 'Ideation Process', link: '/ideation-process' },
+      { text: 'Feature Enhancements', link: '/feature-enhancements' },
       { text: 'About me', link: '/about' }
     ],
 
