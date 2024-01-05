@@ -23,7 +23,7 @@
     "price": 30.99,
     "calories": 453,
     "breed": "All",
-    "animalSize": "All",
+    "animalSize": "Small",
     "lifeStage": "Adult",
     "picture": "https://s7d2.scene7.com/is/image/PetSmart/5168412?$CLEARjpg$"
   },
@@ -37,7 +37,7 @@
     "price": 122.99,
     "calories": 327,
     "breed": "German Shepherd",
-    "animalSize": "Large",
+    "animalSize": "All",
     "lifeStage": "Adult",
     "picture": "https://s7d2.scene7.com/is/image/PetSmart/5211606?$CLEARjpg$"
   },
