@@ -1,5 +1,9 @@
 <template>
-  <button type="button" class="btn" @click="handleClick">
+  <button
+    type="button"
+    class="btn bg-gradient-to-r from-[#ec4899] to-[#be185d] hover:from-[#be185d] hover:to-[#831843]"
+    @click="handleClick"
+  >
     <slot></slot>
   </button>
 </template>
@@ -26,7 +30,7 @@ export default defineComponent({
   border-style: solid;
   border-color: #e5e7eb;
   color: #fff;
-  background-color: rgb(190 24 93);
+
   transition: all 0.15s ease-in-out;
   border-radius: 0.375rem;
   width: 18rem;
@@ -34,7 +38,6 @@ export default defineComponent({
 }
 
 .btn:hover {
-  background-color: rgb(131 24 67);
   transition: all 0.15s ease-in-out;
 }
 </style>
