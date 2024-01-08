@@ -1,12 +1,17 @@
 <template>
-  <Step1 v-if="state.currentStep === 1" :pets="availablePets" :setPet="setPet" />
-  <Step2 v-if="state.currentStep === 2" :goToNextStep="goToNextStep" />
-  <Step3 v-if="state.currentStep === 3" />
+  <div class="load" v-if="isLoading">
+    <Loading />
+  </div>
+  <div v-else>
+    <Step1 v-if="state.currentStep === 1" :pets="availablePets" :setPet="setPet" />
+    <Step2 v-if="state.currentStep === 2" :goToNextStep="goToNextStep" />
+    <Step3 v-if="state.currentStep === 3" />
 
-  <button class="back-icon" v-if="state.currentStep > 1" @click="goToPreviousStep">
-    <ArrowLeftIcon style="height: 1.2rem; margin: 0.25rem" />
-    Back
-  </button>
+    <button class="back-icon" v-if="state.currentStep > 1" @click="goToPreviousStep">
+      <ArrowLeftIcon style="height: 1.2rem; margin: 0.25rem" />
+      Back
+    </button>
+  </div>
 </template>
 
 <script lang="ts">
@@ -15,6 +20,7 @@ import { useUserStore } from '@/stores/userStore'
 import { useRecommendationStore } from '@/stores/recommendationStore'
 import type { Pet } from '@/types/Pet'
 import { ArrowLeftIcon } from '@heroicons/vue/24/outline'
+import Loading from '@/components/Loading.vue'
 
 import Step1 from './Step1.vue'
 import Step2 from './Step2.vue'
@@ -32,6 +38,7 @@ export default defineComponent({
     })
 
     const availablePets = computed(() => userStore.getPetsList)
+    const isLoading = computed(() => userStore.getIsLoading)
     const selectedPet = computed(() => recommendationStore.selectedPet)
 
     const setPet = (pet: Pet) => {
@@ -55,6 +62,7 @@ export default defineComponent({
       availablePets,
       selectedPet,
       state,
+      isLoading,
       goToNextStep,
       goToPreviousStep,
       totalSteps,
@@ -65,12 +73,19 @@ export default defineComponent({
     Step1,
     Step2,
     Step3,
-    ArrowLeftIcon
+    ArrowLeftIcon,
+    Loading
   }
 })
 </script>
 
 <style lang="scss" scoped>
+.load {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 .back-icon {
   display: flex;
   justify-content: left;
