@@ -3,12 +3,14 @@ import type { User } from '@/types/User'
 
 export const useUserStore = defineStore('user', {
   state: () => ({
-    user: null as User | null
+    user: null as User | null,
+    isLoading: true
   }),
   getters: {
     isLoggedIn: (state) => !!state.user,
     getPetsList: (state) => (state.user ? state.user.pets : []),
-    getUser: (state) => state.user
+    getUser: (state) => state.user,
+    getIsLoading: (state) => state.isLoading
   },
   actions: {
     async fetchUser() {
@@ -41,11 +43,13 @@ export const useUserStore = defineStore('user', {
                 }
               ]
             })
+            this.isLoading = false
           }, 1000)
         })
         this.user = response
       } catch (e) {
         console.error('Failed to fetch user', e)
+        this.isLoading = false
       }
     }
   }
