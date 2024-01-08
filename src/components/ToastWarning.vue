@@ -28,7 +28,7 @@
         class="ms-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8"
         data-dismiss-target="#toast-warning"
         aria-label="Close"
-        @click="hideTooltip"
+        @click="hideToast"
       >
         <span class="sr-only">Close</span>
         <svg
@@ -59,25 +59,22 @@ export default defineComponent({
     message: {
       type: String,
       required: true
-    },
-    closeFunction: {
-      type: Function,
-      required: true
     }
   },
-  setup(props) {
-    const isVisible = ref(true)
+  setup() {
+    const isVisible = ref(false)
 
-    const hideTooltip = () => {
+    const showToast = () => {
+      isVisible.value = true
+    }
+    const hideToast = () => {
       isVisible.value = false
-      setTimeout(() => {
-        props.closeFunction()
-      }, 300)
     }
 
     return {
       isVisible,
-      hideTooltip
+      hideToast,
+      showToast
     }
   }
 })
