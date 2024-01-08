@@ -8,15 +8,17 @@
       :name="pet.name"
       :species="pet.species"
     />
-    <AddPet />
+    <AddPet @click="handleAddPet" />
   </div>
+  <ToastWarning ref="toastRef" message="It's not possible to add a pet now" />
 </template>
 
 <script lang="ts">
-import { defineComponent, type PropType } from 'vue'
+import { defineComponent, type PropType, ref } from 'vue'
 import type { Pet } from '@/types/Pet'
 import PetToken from '@/components/PetToken.vue'
 import AddPet from '@/components/AddPet.vue'
+import ToastWarning from '@/components/ToastWarning.vue'
 
 export default defineComponent({
   name: 'Step1View',
@@ -30,9 +32,21 @@ export default defineComponent({
       required: true
     }
   },
+  setup() {
+    const toastRef = ref(null)
+
+    const handleAddPet = () => {
+      if (toastRef.value) {
+        toastRef.value.showToast()
+      }
+    }
+
+    return { handleAddPet, toastRef }
+  },
   components: {
     PetToken,
-    AddPet
+    AddPet,
+    ToastWarning
   }
 })
 </script>
@@ -50,4 +64,3 @@ h1 {
   margin-top: 2rem;
 }
 </style>
-@/sfc
