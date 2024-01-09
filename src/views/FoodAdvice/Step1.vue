@@ -33,7 +33,7 @@ export default defineComponent({
     }
   },
   setup() {
-    const toastRef = ref(null)
+    const toastRef = ref<InstanceType<typeof ToastWarning> | null>(null)
 
     const handleAddPet = () => {
       if (toastRef.value) {
