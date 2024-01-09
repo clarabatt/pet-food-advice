@@ -1,11 +1,10 @@
 <template>
-  <div class="load" v-if="isLoading">
+  <div class="load" v-if="isPetLoading || isRecommendationLoading">
     <Loading />
   </div>
   <div v-else>
     <Step1 v-if="state.currentStep === 1" :pets="availablePets" :setPet="setPet" />
     <Step2 v-if="state.currentStep === 2" :goToNextStep="getRecommendation" />
-    {{ foodRecommendations && foodRecommendations.toString() }}
     <Step3 v-if="state.currentStep === 3" />
 
     <button class="back-icon" v-if="state.currentStep > 1" @click="goToPreviousStep">
@@ -19,9 +18,9 @@
 import { defineComponent, ref, computed, reactive } from 'vue'
 import { useUserStore } from '@/stores/userStore'
 import { useRecommendationStore } from '@/stores/recommendationStore'
-import type { Pet } from '@/types/Pet'
 import { ArrowLeftIcon } from '@heroicons/vue/24/outline'
 import Loading from '@/components/Loading.vue'
+import type { Pet } from '@/types/Pet'
 
 import Step1 from './Step1.vue'
 import Step2 from './Step2.vue'
@@ -40,6 +39,7 @@ export default defineComponent({
 
     const availablePets = computed(() => userStore.getPetsList)
     const isPetLoading = computed(() => userStore.getIsLoading)
+    const isRecommendationLoading = computed(() => recommendationStore.isLoading)
     const foodRecommendations = computed(() => recommendationStore.getRecommendations)
     const selectedPet = computed(() => recommendationStore.selectedPet)
 
@@ -69,7 +69,8 @@ export default defineComponent({
       availablePets,
       selectedPet,
       state,
-      isLoading: isPetLoading,
+      isPetLoading,
+      isRecommendationLoading,
       goToNextStep,
       goToPreviousStep,
       totalSteps,
