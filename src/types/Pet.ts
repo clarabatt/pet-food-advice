@@ -8,10 +8,10 @@ export interface Pet {
   gender: 'FEMALE' | 'MALE' | null
   spayed_neutered: boolean
   has_photo: boolean
-  age: Number
+  age: number
   weight: {
-    value: Number
-    is_metric: Number
+    value: number
+    is_metric: number
   }
   is_removed: boolean
 }
