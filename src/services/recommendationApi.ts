@@ -1,11 +1,26 @@
 const API_BASE_URL = 'https://pet-food-advice.azurewebsites.net/api/'
 const API_KEY = import.meta.env.VITE_API_CODE
 
-interface RecommendationPayload {
+export interface RecommendationPayload {
   breed: string
   age: number
   animalWeight: number
   conditions: string[]
+}
+
+export interface RecommendationResponse {
+  _id: string
+  name: string
+  brand: string
+  condition: string | null
+  packageWeight_kg: number
+  packageWeight_lb: number | null
+  price: number
+  calories: number
+  breed: string
+  animalSize: string
+  lifeStage: string
+  picture: string
 }
 
 export const getDogFoodRecommendations = async (payload: RecommendationPayload) => {

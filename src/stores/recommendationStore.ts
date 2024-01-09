@@ -1,14 +1,17 @@
 import { toRaw } from 'vue'
 import { defineStore } from 'pinia'
-import { getDogFoodRecommendations } from '@/services/recommendationApi'
+import {
+  getDogFoodRecommendations,
+  type RecommendationResponse
+} from '@/services/recommendationApi'
 import type { Pet } from '@/types/Pet'
 
 export const useRecommendationStore = defineStore('recommendationStore', {
   state: () => ({
     selectedPet: null as Pet | null,
     petConditions: [] as string[],
-    recommendations: [] as Object[],
-    isLoading: true
+    recommendations: [] as RecommendationResponse[],
+    isLoading: false
   }),
 
   actions: {
