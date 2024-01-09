@@ -1,4 +1,4 @@
-// recommendationStore.js
+import { toRaw } from 'vue'
 import { defineStore } from 'pinia'
 import { getDogFoodRecommendations } from '@/services/recommendationApi'
 import type { Pet } from '@/types/Pet'
@@ -48,8 +48,8 @@ export const useRecommendationStore = defineStore('recommendationStore', {
       const payload = {
         breed: this.selectedPet.breed,
         age: this.selectedPet.age,
-        weight: weight,
-        conditions: this.petConditions
+        animalWeight: weight,
+        conditions: toRaw(this.petConditions)
       }
 
       this.isLoading = true

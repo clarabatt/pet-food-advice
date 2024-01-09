@@ -4,15 +4,8 @@ const API_KEY = import.meta.env.VITE_API_CODE
 interface RecommendationPayload {
   breed: string
   age: number
-  weight: number
+  animalWeight: number
   conditions: string[]
-}
-
-interface RecommendationResponse {
-  name: string
-  brand: string
-  price: number
-  calories: number
 }
 
 export const getDogFoodRecommendations = async (payload: RecommendationPayload) => {
@@ -23,14 +16,20 @@ export const getDogFoodRecommendations = async (payload: RecommendationPayload) 
       headers: new Headers({ 'content-type': 'application/json' }),
       body: JSON.stringify(payload)
     })
+
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`)
     }
-    const result = (await response.json()) as RecommendationResponse[]
-    console.log('Success:', result)
+
+    const text = await response.text()
+
+    const result = JSON.parse(text.replace(/NaN/g, '"NaN"'), (key, value) =>
+      value === 'NaN' ? null : value
+    )
+
     return result
   } catch (error) {
-    console.log('Error: ' + error)
+    console.log(error)
     throw error
   }
 }
