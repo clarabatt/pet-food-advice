@@ -4,7 +4,8 @@
   </div>
   <div v-else>
     <Step1 v-if="state.currentStep === 1" :pets="availablePets" :setPet="setPet" />
-    <Step2 v-if="state.currentStep === 2" :goToNextStep="goToNextStep" />
+    <Step2 v-if="state.currentStep === 2" :goToNextStep="getRecommendation" />
+    {{ foodRecommendations && foodRecommendations.toString() }}
     <Step3 v-if="state.currentStep === 3" />
 
     <button class="back-icon" v-if="state.currentStep > 1" @click="goToPreviousStep">
@@ -38,8 +39,14 @@ export default defineComponent({
     })
 
     const availablePets = computed(() => userStore.getPetsList)
-    const isLoading = computed(() => userStore.getIsLoading)
+    const isPetLoading = computed(() => userStore.getIsLoading)
+    const foodRecommendations = computed(() => recommendationStore.getRecommendations)
     const selectedPet = computed(() => recommendationStore.selectedPet)
+
+    const getRecommendation = () => {
+      recommendationStore.fetchRecommendations()
+      goToNextStep()
+    }
 
     const setPet = (pet: Pet) => {
       recommendationStore.selectPet(pet)
@@ -62,11 +69,13 @@ export default defineComponent({
       availablePets,
       selectedPet,
       state,
-      isLoading,
+      isLoading: isPetLoading,
       goToNextStep,
       goToPreviousStep,
       totalSteps,
-      setPet
+      setPet,
+      foodRecommendations,
+      getRecommendation
     }
   },
   components: {
