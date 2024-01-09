@@ -1,12 +1,14 @@
 // recommendationStore.js
 import { defineStore } from 'pinia'
+import { getDogFoodRecommendations } from '@/services/recommendationApi'
 import type { Pet } from '@/types/Pet'
 
 export const useRecommendationStore = defineStore('recommendationStore', {
   state: () => ({
     selectedPet: null as Pet | null,
     petConditions: [] as string[],
-    recommendations: [] as Object[]
+    recommendations: [] as Object[],
+    isLoading: true
   }),
 
   actions: {
@@ -31,10 +33,39 @@ export const useRecommendationStore = defineStore('recommendationStore', {
       } else {
         this.addCondition(condition)
       }
+    },
+    fetchRecommendations() {
+      if (!this.selectedPet) {
+        throw new Error('No pet selected')
+      }
+
+      let weight: number = Number(this.selectedPet.weight.value)
+
+      if (this.selectedPet.weight.is_metric == 1) {
+        weight = weight * 2.205
+      }
+
+      const payload = {
+        breed: this.selectedPet.breed,
+        age: this.selectedPet.age,
+        weight: weight,
+        conditions: this.petConditions
+      }
+
+      this.isLoading = true
+
+      getDogFoodRecommendations(payload)
+        .then((result) => {
+          this.recommendations = result
+        })
+        .finally(() => {
+          this.isLoading = false
+        })
     }
   },
 
   getters: {
-    hasSelectedPet: (state) => state.selectedPet !== null
+    hasSelectedPet: (state) => state.selectedPet !== null,
+    getRecommendations: (state) => state.recommendations
   }
 })
