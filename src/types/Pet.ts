@@ -23,5 +23,4 @@ export type PetCondition =
   | 'Mobility concerns'
   | 'Overweight'
   | 'Urinary problems'
-  | 'Heart Disease'
   | 'Skin/Coat problems'

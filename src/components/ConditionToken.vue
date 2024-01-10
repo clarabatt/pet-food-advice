@@ -27,12 +27,6 @@
         :src="condition_joint_icon"
       />
       <img
-        v-else-if="name === 'Heart Disease'"
-        class="icon"
-        alt="heart with a pulse"
-        :src="condition_heart_icon"
-      />
-      <img
         v-else-if="name === 'Skin/Coat problems'"
         class="icon"
         alt="skin with a hair growing icon"
@@ -62,7 +56,6 @@ import type { Icon } from '@/types/Utils'
 import condition_dental_icon from '@/assets/icons/condition_dental.png'
 import condition_diet_icon from '@/assets/icons/condition_diet.png'
 import condition_digestive_icon from '@/assets/icons/condition_digestive.png'
-import condition_heart_icon from '@/assets/icons/condition_heart.png'
 import condition_joint_icon from '@/assets/icons/condition_joint.png'
 import condition_kidney_icon from '@/assets/icons/condition_kidney.png'
 import condition_skin_icon from '@/assets/icons/condition_skin.png'
@@ -100,7 +93,6 @@ export default defineComponent({
       condition_dental_icon,
       condition_diet_icon,
       condition_digestive_icon,
-      condition_heart_icon,
       condition_joint_icon,
       condition_kidney_icon,
       condition_skin_icon,
