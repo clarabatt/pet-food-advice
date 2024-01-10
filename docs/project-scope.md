@@ -56,3 +56,22 @@ I've tried to follow Vetster's website guidelines as data patterns, colors, font
 
 As they use Tailwind UI, I've tried my best to mimic the components without spending too much time on it, as the goal of this project is to show the feature itself and not the basic website components copy. Despite believing a good UI is important to the UX, I've made it as good as possible given the restrictions.
 :::
+
+### Backend
+
+- Python
+- Pandas
+- SciKit Learn
+- Azure Functions
+
+I chose Python as my backend language for two reasons. First, I wanted to work with some Data Science or Machine Learning tools in this project, and **Python is the most used language in this area with several libraries available.** Second, I've worked with Python for data purposes in my last experience, so it's a familiar technology.
+
+In the Python code, I used pandas to manipulate the data, as Dataframes and SciKit Learn to have access to models to train and predict the data. I first changed the algorithm that I had in mind (Decision Tree), as I didn't have a data volume, and it was presented as not the best option for this case. I detailed more about the algorithm in the [Data and Recommendation Algorithm](/ideation-process.md#data-and-recommendation-algorithm) section.
+
+Azure Functions was my choice to deploy the backend code for three reasons:
+
+- It's a simple and fast way to deploy Python code.
+- I'm studying for Azure certifications and want to practice it more.
+- My API is simple, with only one endpoint, so I didn't need a more complex solution.
+
+As a database solution, I used a simple JSON file. It's not an option for a real production application, but it was enough to show the feature working.
