@@ -2,48 +2,26 @@
 outline: deep
 ---
 
-# Runtime API Examples
+# Feature Enhancements
 
-This page demonstrates usage of some of the runtime APIs provided by VitePress.
+**Every project can be improved.** As technology professionals, we need to know the time to stop because, in the business world, we are ruled by the project trio: scope, cost and time. This section shows some ideas to improve or place this feature in a real production environment.
 
-The main `useData()` API can be used to access site, theme, and page data for the current page. It works in both `.md` and `.vue` files:
+## Frontend
 
-```md
-<script setup>
-import { useData } from 'vitepress'
+> WIP
 
-const { theme, page, frontmatter } = useData()
-</script>
+## Backend
 
-## Results
+1. **Use a real database solution to store the data.** I suggest a NoSQL database because the food objects can change and gain different attributes over time, as it's not a core feature and managing a relational database would consume a lot of time.
 
-### Theme Data
-<pre>{{ theme }}</pre>
+2. **Move the endpoint for an existing API.** The solution can stay in a serverless solution. As proof of concept, it achieved the goal, but we can put it inside the existing API project. Maintaining the same codebase, authentication, and deployment process is better.
 
-### Page Data
-<pre>{{ page }}</pre>
+3. **Change the dataset to use brands and products that Vetster wants to work with.**
 
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-```
+4. **Use types to improve API reliability.**
 
-<script setup>
-import { useData } from 'vitepress'
+5. **Use a solution to store the encoded data to avoid processing it every time the API is called.**
 
-const { site, theme, page, frontmatter } = useData()
-</script>
+   > Encoded data is a table organized differently, where the columns are the attributes and the rows are the products. In this data frame, we have only `0` and `1`, where `0` means that the product doesn't have the attribute and `1` means that the product has the attribute. We only need to encode the data when the dataset changes.
 
-## Results
-
-### Theme Data
-<pre>{{ theme }}</pre>
-
-### Page Data
-<pre>{{ page }}</pre>
-
-### Page Frontmatter
-<pre>{{ frontmatter }}</pre>
-
-## More
-
-Check out the documentation for the [full list of runtime APIs](https://vitepress.dev/reference/runtime-api#usedata).
+   ![Encoded Data](./images/encoded_data.png)
