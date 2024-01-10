@@ -6,6 +6,7 @@ The project is deployed and you can use the _[project link](https://pet-food-adv
 
 !['Pet Selection'](./docs/images/screenshot_1.png)
 !['Pet Conditions Selection'](./docs/images/screenshot_2.png)
+!['Pet Food Recommendations'](./docs/images/screenshot_3.png)
 
 ### Disclaimers
 
