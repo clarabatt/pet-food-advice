@@ -35,9 +35,9 @@ The next phase was to create the feature UI itself, at least for the first parts
 > By the way, I loved to use Vue3. I'm thinking about using it in my next projects, instead of React.
 > Pinia is very close to MobX on React, and I love to use it because it keeps things simple.
 
-### Data and Decision Tree
+### Data and Recommendation Algorithm
 
-I started to work on the logic of the feature, the decision tree. I created a JSON file with the dog food samples:
+I started to work on the logic of the feature, the recommendation algorithm. I created a JSON file with the dog food samples:
 
 ```json
 {
@@ -56,16 +56,44 @@ I started to work on the logic of the feature, the decision tree. I created a JS
 }
 ```
 
-I got those samples from [PetSmart's website](https://www.petsmart.ca/dog/food/dry-food/authority+blue-buffalo+hills-science-diet+natural-balance+nutrience+purina-pro-plan+royal-canin/?pmin=0.01&srule=best-sellers), and made some adjusts for my use. Thank you, PetSmart <3.
+I tried to find a dataset but didn't find any, so I had to build my own using pet store requisitions as a mining place. I got the samples I used from [PetSmart's website](https://www.petsmart.ca/dog/food/dry-food/authority+blue-buffalo+hills-science-diet+natural-balance+nutrience+purina-pro-plan+royal-canin/?pmin=0.01&srule=best-sellers), making some adjusts for my use. Thank you, PetSmart <3.
 
-The decision tree was a part that required some tests. I drew the questions in my white board to think how I could organize the priority order.
+When I started to think about the algorithm, I felt a decision tree was a perfect solution for this case. I began to think about the priority orders to choose the perfect food match. I drew the questions on my whiteboard to determine how to organize the priority order.
 
 ![Decision Tree](./images/decision-tree-thinking.jpg)
 
 _\* That in the right corner bottom is Lola's weight track._
 
-Once I had an idea of how the decision tree would work, I started to code it. I decided to use python as it has a lot of libraries to help with data manipulation. I used pandas to manipulate the data and sklearn to create the decision model. I created a Colab Notebook to test the model and the data manipulation before using it in an API.
+Once I knew how it would work, I started to code it. I decided to use Python as it has a lot of libraries to help with data manipulation. I used pandas to manipulate the data and Sklearn to create the decision model. I made a Colab Notebook to test the model and the data manipulation before using it in an API.
 
-[You can check the notebook here](https://colab.research.google.com/drive/1iEG3p1saytlS0wGL7Upbh8W7b5FDvt1t?usp=sharing)
+When I started my tests, I realized that I didn't have enough data to train the model, and decision trees are the best option when you have more specific than general cases. I had only 100 samples, which is a ridiculous amount. Because of the difficulty of finding a dataset, getting more data was not an option. I could try a solution to randomize samples, but I wanted to keep the data as accurate as possible. So, I decided to change the algorithm.
 
-![Decision Tree Model Tests](./images/decision-tree-model.png)
+Researching algorithms, I found the **Cosine Similarity**. It determines how similar two items are. This algorithm is largely used in recommendation systems.
+
+[You can check my Google Colab notebook with the tests here](https://colab.research.google.com/drive/1iEG3p1saytlS0wGL7Upbh8W7b5FDvt1t?usp=sharing)
+
+![Recommendation Algorithm Tests](./images/recommendation-model.png)
+
+### Backend
+
+I created a simple API using Azure Functions to serve the data and the recommendation algorithm. I used a JSON file as a database, which is not an option for a real production application, but it was enough to show the feature working.
+
+The backend is in a different repo. [You can check the API code here](https://github.com/clarabatt/pet-food-advice-api)
+
+![Azure Panel](./images/azure-functions.png)
+
+### Integration
+
+I integrated the API with the frontend, using Node's fetch feature to make the requests. I created a service to handle the requests and centralize the API outside the Store.
+
+### Final Adjusts
+
+Every feature needs some final adjustments before the release. That was the time to make the final touches, like the loading state, the error handling, the responsive layout, and finishing documentation.
+
+### Organization and Documentation
+
+I did a GitHub project to organize the tasks and track the project's progress.
+
+![Project Board](./images/tasks-management.png)
+
+To achieve all my intentions with the project and document every step taken, I created documentation using VitePress to write this case study.
