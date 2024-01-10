@@ -8,7 +8,9 @@ outline: deep
 
 ## Frontend
 
-> WIP
+1. **Improve responsiveness.** The project is responsive, but it can be improved.
+
+2. **Error component to show a message when the API is down.**
 
 ## Backend
 
