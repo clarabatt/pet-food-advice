@@ -18,7 +18,6 @@ export interface Pet {
 
 export type PetCondition =
   | 'Allergies or Food Sensitivities'
-  | 'Diabetes'
   | 'Digestive issues'
   | 'Dental issues'
   | 'Mobility concerns'

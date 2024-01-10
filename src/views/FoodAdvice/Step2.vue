@@ -42,7 +42,6 @@ export default defineComponent({
 
     const conditionsRef = ref<PetCondition[]>([
       'Allergies or Food Sensitivities',
-      'Diabetes',
       'Digestive issues',
       'Dental issues',
       'Mobility concerns',

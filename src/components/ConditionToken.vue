@@ -9,12 +9,6 @@
         :src="condition_diet_icon"
       />
       <img
-        v-else-if="name === 'Diabetes'"
-        class="icon"
-        alt="blood sample"
-        :src="condition_diabetes_icon"
-      />
-      <img
         v-else-if="name === 'Digestive issues'"
         class="icon"
         alt="intestine with a check icon on it"
@@ -66,7 +60,6 @@ import { defineComponent, type PropType } from 'vue'
 import type { PetCondition } from '@/types/Pet'
 import type { Icon } from '@/types/Utils'
 import condition_dental_icon from '@/assets/icons/condition_dental.png'
-import condition_diabetes_icon from '@/assets/icons/condition_diabetes.png'
 import condition_diet_icon from '@/assets/icons/condition_diet.png'
 import condition_digestive_icon from '@/assets/icons/condition_digestive.png'
 import condition_heart_icon from '@/assets/icons/condition_heart.png'
@@ -105,7 +98,6 @@ export default defineComponent({
   data() {
     return {
       condition_dental_icon,
-      condition_diabetes_icon,
       condition_diet_icon,
       condition_digestive_icon,
       condition_heart_icon,
