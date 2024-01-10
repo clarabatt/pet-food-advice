@@ -5,7 +5,7 @@
   <div v-else>
     <Step1 v-if="state.currentStep === 1" :pets="availablePets" :setPet="setPet" />
     <Step2 v-if="state.currentStep === 2" :goToNextStep="getRecommendation" />
-    <Step3 v-if="state.currentStep === 3" />
+    <Step3 v-if="state.currentStep === 3" :petName="selectedPet?.name" />
 
     <button class="back-icon" v-if="state.currentStep > 1" @click="goToPreviousStep">
       <ArrowLeftIcon style="height: 1.2rem; margin: 0.25rem" />
@@ -100,7 +100,7 @@ export default defineComponent({
   display: flex;
   justify-content: left;
   align-items: center;
-  margin-top: 2rem;
+  margin: 2rem 0;
   width: 100%;
 }
 </style>
