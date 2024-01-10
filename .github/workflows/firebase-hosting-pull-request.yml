@@ -9,6 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Set up environment variables
+        run: |
+          echo "VITE_API_CODE=${{ secrets.VITE_API_CODE }}" >> $GITHUB_ENV
       - run: npm ci
       - run: npm run build
       - run: npm run docs:build
