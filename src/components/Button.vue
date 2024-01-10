@@ -22,7 +22,7 @@ export default defineComponent({
 })
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .btn {
   font-size: 1.125rem;
   line-height: 1.75rem;
