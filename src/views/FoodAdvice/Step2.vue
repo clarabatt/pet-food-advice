@@ -47,7 +47,6 @@ export default defineComponent({
       'Mobility concerns',
       'Overweight',
       'Urinary problems',
-      'Heart Disease',
       'Skin/Coat problems'
     ])
 
