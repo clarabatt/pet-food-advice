@@ -10,8 +10,8 @@ hero:
       text: Project Scope
       link: /project-scope
     - theme: alt
-      text: Creative Process
-      link: /creative-process
+      text: Ideation Process
+      link: /ideation-process
 features:
   - icon: 🐶
     title: Select a Pet
