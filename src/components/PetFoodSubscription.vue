@@ -45,8 +45,7 @@ export default defineComponent({
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 0 2rem 0;
-  cursor: pointer;
+  padding: 2.5rem 0;
   border-bottom: 1px solid #e5e5e5;
 }
 
@@ -68,12 +67,12 @@ export default defineComponent({
 .petFood > .description > .brand {
   font-size: 1rem;
   font-weight: 600;
-  margin: 0.35rem 0;
+  margin: 0.35rem 0 0 0;
 }
 
 .petFood > .description > .name {
   font-size: 1.15rem;
-  margin: 0.5rem 0;
+  margin: 0.3rem 0 0.5rem 0;
 }
 
 .petFood > .description > p {
@@ -84,7 +83,7 @@ export default defineComponent({
 .petFood > .description > .dailyAmount {
   font-size: 1.3rem;
   font-weight: 600;
-  margin: 0.5rem 0;
+  margin: 0.3rem 0 0 0;
 }
 
 .petFood > .description > .details {

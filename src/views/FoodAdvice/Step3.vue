@@ -1,6 +1,9 @@
 <template>
   <div class="foodRecommendations">
-    <h1>The recommended options for {{ petName ? petName : 'your pet' }} are:</h1>
+    <div class="title">
+      <SparklesIcon class="w-10 h-10 text-yellow-500" />
+      <h1>The recommended options for {{ petName ? petName : 'your pet' }} are:</h1>
+    </div>
     <PetFoodSubscription v-for="food in foodList" :key="food._id" :food="food" />
   </div>
 </template>
@@ -10,6 +13,7 @@ import { computed, defineComponent } from 'vue'
 import { useRecommendationStore } from '@/stores/recommendationStore'
 import type { RecommendationResponse } from '@/services/recommendationApi'
 import PetFoodSubscription from '@/components/PetFoodSubscription.vue'
+import { SparklesIcon } from '@heroicons/vue/24/solid'
 
 export default defineComponent({
   name: 'Step3View',
@@ -19,7 +23,7 @@ export default defineComponent({
       required: false
     }
   },
-  components: { PetFoodSubscription },
+  components: { PetFoodSubscription, SparklesIcon },
   setup() {
     const recommendationStore = useRecommendationStore()
 
@@ -42,5 +46,17 @@ export default defineComponent({
   align-items: center;
   justify-content: center;
   margin: 2rem 0;
+}
+
+.foodRecommendations > .title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.foodRecommendations > .title > h1 {
+  margin: 0 0 0 0.5rem;
 }
 </style>

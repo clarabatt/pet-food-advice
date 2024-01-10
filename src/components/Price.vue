@@ -1,7 +1,7 @@
 <template>
   <div class="priceComponent">
     <p>$</p>
-    <p class="price">{{ price }}</p>
+    <p class="price">{{ price.toFixed(0) }}</p>
     <p>/month</p>
   </div>
 </template>
