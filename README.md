@@ -4,6 +4,10 @@ This is a project with a objective of explore Vue 3 and Vite. The project is a w
 
 The project is deployed and you can use the _[project link](https://pet-food-advice.web.app/)_ to access it without build in your machine.
 
+[API Repository](https://github.com/clarabatt/pet-food-advice-api)
+
+> If you want to understand the project motivations and the ideation process, [I highly recommend you to check the documentation](https://docs-pet-food-advice.web.app/).
+
 !['Pet Selection'](./docs/images/screenshot_1.png)
 !['Pet Conditions Selection'](./docs/images/screenshot_2.png)
 !['Pet Food Recommendations'](./docs/images/screenshot_3.png)
