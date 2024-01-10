@@ -34,7 +34,7 @@ export const useUserStore = defineStore('user', {
                   gender: 'FEMALE',
                   spayed_neutered: true,
                   has_photo: true,
-                  age: 9,
+                  age: 4,
                   weight: {
                     value: 27.0,
                     is_metric: 1
