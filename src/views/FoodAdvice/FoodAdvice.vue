@@ -100,7 +100,7 @@ export default defineComponent({
   display: flex;
   justify-content: left;
   align-items: center;
-  margin: 2rem 0;
+  margin: 2rem 0 0 1rem;
   width: 100%;
 }
 </style>

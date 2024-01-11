@@ -1,7 +1,8 @@
 <template>
-  <nav class="sidebar">
+  <nav :class="['sidebar', { 'show-sidebar': isSidebarOpen }]">
     <div class="sidebar-logo">
       <!-- <img src="/logo.png" alt="logo" /> -->
+      <ArrowLeftIcon class="h-6 w-6 menu-icon text-[#fff]" @click="toggleSidebar" />
     </div>
     <ol class="sidebar-links">
       <SidebarItem v-for="link in links" :key="link.name" :link="link" />
@@ -22,12 +23,14 @@ import {
   ClipboardDocumentListIcon
 } from '@heroicons/vue/24/outline'
 import SidebarItem from './SidebarItem.vue'
+import { ArrowLeftIcon } from '@heroicons/vue/24/solid'
 import type { Link } from '@/types/Utils'
 
 export default defineComponent({
   name: 'SidebarComponent',
-  components: { SidebarItem },
+  components: { SidebarItem, ArrowLeftIcon },
   setup() {
+    const isSidebarOpen = ref<boolean>(false)
     const links = ref<Link[]>([
       { name: 'Dashboard', icon: Square3Stack3DIcon, route: '/', disabled: false },
       { name: 'Appointments', icon: UserIcon, route: '/', disabled: true },
@@ -39,24 +42,37 @@ export default defineComponent({
       { name: 'Account', icon: Cog6ToothIcon, route: '/', disabled: true }
     ])
 
-    return { links }
+    const toggleSidebar = () => {
+      isSidebarOpen.value = !isSidebarOpen.value
+    }
+
+    return { links, toggleSidebar, isSidebarOpen }
   }
 })
 </script>
 
-<style>
+<style lang="scss" scoped>
+@import '@/assets/variables.scss';
+
 .sidebar {
   display: flex;
   flex-direction: column;
-  width: 18rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: $sidebar-width;
   min-height: 100vh;
   background-color: #423898;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
+  transform: translateX(0);
+  transition: transform 0.5s ease-out;
 }
 
 .sidebar > .sidebar-logo {
   padding: 1.7rem;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .sidebar > .sidebar-links {
@@ -65,5 +81,17 @@ export default defineComponent({
   width: 100%;
   padding: 1rem 0.5rem;
   color: #fff;
+}
+
+@media only screen and (max-width: $layout-breakpoint-small) {
+  .sidebar {
+    transform: translateX(-100%);
+    width: 250px;
+    overflow: auto;
+  }
+
+  .show-sidebar {
+    transform: translateX(0);
+  }
 }
 </style>

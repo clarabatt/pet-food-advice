@@ -40,6 +40,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/variables.scss';
 .foodRecommendations {
   display: flex;
   flex-direction: column;
@@ -58,5 +59,11 @@ export default defineComponent({
 
 .foodRecommendations > .title > h1 {
   margin: 0 0 0 0.5rem;
+}
+
+@media only screen and (max-width: $layout-breakpoint-medium) {
+  .foodRecommendations > .title > h1 {
+    font-size: 1.8rem;
+  }
 }
 </style>
