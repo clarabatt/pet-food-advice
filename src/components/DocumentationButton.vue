@@ -2,7 +2,7 @@
   <div class="floating-button-container">
     <a :href="documentationLink" target="_blank" class="floating-button">
       <DocumentIcon class="icon" />
-      <span class="tooltip">Check Documentation</span>
+      <span class="tooltip">View Docs</span>
     </a>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 @import '@/assets/variables.scss';
 .floating-button-container {
-  position: absolute;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   z-index: 1000;
@@ -37,9 +37,7 @@ export default defineComponent({
   display: flex;
   align-items: center;
   justify-content: center;
-  /* background: linear-gradient(to right, #ec4899, #be185d); */
   background: linear-gradient(to right, $sidebar-background-color, $primary-color);
-  //   background-color: $primary-color-fade;
   border: none;
   border-radius: 50%;
   padding: 15px;
@@ -61,7 +59,7 @@ export default defineComponent({
 }
 
 .floating-button:hover {
-  width: 250px;
+  width: 160px;
   border-radius: 30px;
 }
 

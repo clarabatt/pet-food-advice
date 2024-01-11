@@ -152,6 +152,10 @@ export default defineComponent({
     justify-content: center;
   }
 
+  .stats {
+    width: 100%;
+  }
+
   .stats > .description {
     align-items: center;
     text-align: center;

@@ -50,6 +50,7 @@ export default defineComponent({
 @media only screen and (max-width: $layout-breakpoint-small) {
   .menubar {
     width: 100%;
+    margin-bottom: 0.5rem;
   }
 
   .menu-icon {

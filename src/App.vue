@@ -4,9 +4,9 @@
     <Menubar :button-action="toggleSidebar" />
     <main>
       <RouterView />
-      <DocumentationButton />
     </main>
   </div>
+  <DocumentationButton />
 </template>
 
 <script lang="ts">
@@ -66,6 +66,8 @@ main {
 @media only screen and (max-width: $layout-breakpoint-small) {
   main {
     width: 95%;
+    padding: 1rem;
+    margin-top: calc($menubar-height + 1rem);
   }
   .main-panel {
     padding-left: 0;
