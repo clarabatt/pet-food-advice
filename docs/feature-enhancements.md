@@ -8,9 +8,17 @@ outline: deep
 
 ## Frontend
 
-1. **Improve responsiveness.** The project is responsive, but it can be improved.
+1. **Click anywhere out the sidebar to close it.** As well when changing the route. It's a much better user experience.
 
-2. **Error component to show a message when the API is down.**
+2. **Control the form steps using the URL.** Besides, it's a simple feature. I prefer to use the router to control the steps for dense forms because it's easier to share the URL with someone, navigate using the browser arrows, or go to any desired page.
+
+3. **Save the already recommended products on the database.** It's a good idea to avoid recommending different products, as that could confuse the user. Also, in a real scenario, the user would go back to this feature to check what was recommended before instead of making the flow again.
+
+4. **Use veterinarians to improve the recommendation.** We can develop a feature for the veterinarians to approve or disapprove the recommendation made for the specific pet. This information won't be shown to the user, but we can use that data to improve the recommendation.
+
+5. **Store the user data in the localStorage.** Default approach in a real scenario after authenticating the user. The `userStore` must search user data in the localStorage before going to a sign-in/sign-up route and proceeding with the API call for each case.
+
+6. **Error component to show a message when the API is down.**
 
 ## Backend
 
