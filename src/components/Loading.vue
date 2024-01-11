@@ -11,6 +11,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/variables.scss';
 .loader {
   animation: rotate 1s infinite;
   height: 50px;

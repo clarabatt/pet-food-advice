@@ -98,6 +98,15 @@ h1 {
   font-size: 0.6rem;
 }
 
+@media only screen and (max-width: $layout-breakpoint-medium) {
+  .conditions-step {
+    margin-top: 3rem;
+  }
+  .conditions {
+    max-width: 100%;
+  }
+}
+
 @media only screen and (max-width: $layout-breakpoint-small) {
   .conditions-step {
     margin-top: 3rem;
