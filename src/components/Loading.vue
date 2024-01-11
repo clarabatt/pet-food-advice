@@ -28,12 +28,12 @@ export default defineComponent({
 .loader:before {
   animation: ball1 1s infinite;
   background-color: #ec4899;
-  box-shadow: 30px 0 0 #423898;
+  box-shadow: 30px 0 0 $primary-color;
   margin-bottom: 10px;
 }
 .loader:after {
   animation: ball2 1s infinite;
-  background-color: #423898;
+  background-color: $primary-color;
   box-shadow: 30px 0 0 #ec4899;
 }
 
@@ -51,15 +51,15 @@ export default defineComponent({
 
 @keyframes ball1 {
   0% {
-    box-shadow: 30px 0 0 #423898;
+    box-shadow: 30px 0 0 $primary-color;
   }
   50% {
-    box-shadow: 0 0 0 #423898;
+    box-shadow: 0 0 0 $primary-color;
     margin-bottom: 0;
     transform: translate(15px, 15px);
   }
   100% {
-    box-shadow: 30px 0 0 #423898;
+    box-shadow: 30px 0 0 $primary-color;
     margin-bottom: 10px;
   }
 }

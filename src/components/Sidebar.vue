@@ -2,7 +2,7 @@
   <nav :class="['sidebar', { 'show-sidebar': isSidebarOpen }]">
     <div class="sidebar-logo">
       <!-- <img src="/logo.png" alt="logo" /> -->
-      <ArrowLeftIcon class="h-6 w-6 menu-icon text-[#fff]" @click="toggleSidebar" />
+      <ArrowLeftIcon class="h-6 w-6 menu-icon text-[#b4c6fc]" @click="toggleSidebar" />
     </div>
     <ol class="sidebar-links">
       <SidebarItem v-for="link in links" :key="link.name" :link="link" />
@@ -62,7 +62,7 @@ export default defineComponent({
   left: 0;
   width: $sidebar-width;
   min-height: 100vh;
-  background-color: #423898;
+  background-color: $primary-color;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   z-index: 100;
   transform: translateX(0);
@@ -80,7 +80,7 @@ export default defineComponent({
   flex-direction: column;
   width: 100%;
   padding: 1rem 0.5rem;
-  color: #fff;
+  color: $white-color-ref;
 }
 
 @media only screen and (max-width: $layout-breakpoint-small) {

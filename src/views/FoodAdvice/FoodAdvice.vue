@@ -90,6 +90,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/variables.scss';
 .load {
   display: flex;
   justify-content: center;
@@ -102,5 +103,11 @@ export default defineComponent({
   align-items: center;
   margin: 2rem 0 0 1rem;
   width: 100%;
+}
+
+@media only screen and (max-width: $layout-breakpoint-small) {
+  .back-icon {
+    margin-left: 0;
+  }
 }
 </style>

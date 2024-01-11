@@ -2,7 +2,7 @@
   <div class="foodRecommendations">
     <div class="title">
       <SparklesIcon class="w-10 h-10 text-yellow-500" />
-      <h1>The recommended options for {{ petName ? petName : 'your pet' }} are:</h1>
+      <h1>Recommended options for {{ petName ? petName : 'your pet' }}:</h1>
     </div>
     <PetFoodSubscription v-for="food in foodList" :key="food._id" :food="food" />
   </div>

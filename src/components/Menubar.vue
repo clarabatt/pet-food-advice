@@ -37,7 +37,7 @@ export default defineComponent({
   position: fixed;
   width: calc(100% - $sidebar-width);
   height: $menubar-height;
-  background-color: #fff;
+  background-color: $white-color-ref;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
   padding: 1rem 2rem;

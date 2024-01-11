@@ -23,13 +23,14 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/variables.scss';
 .btn {
   font-size: 1.125rem;
   line-height: 1.75rem;
   padding: 1rem 1.5rem;
   border-style: solid;
   border-color: #e5e7eb;
-  color: #fff;
+  color: $white-color-ref;
 
   transition: all 0.15s ease-in-out;
   border-radius: 0.375rem;

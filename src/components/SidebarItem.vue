@@ -33,7 +33,7 @@ li {
   font-family: 'Inter', sans-serif;
   padding: 8px;
   margin-top: 4px;
-  color: rgb(180 198 252);
+  color: $primary-color-fade;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -41,15 +41,15 @@ li {
 }
 
 li:hover {
-  color: #fff;
-  background-color: rgba(81, 69, 205);
+  color: $white-color-ref;
+  background-color: $sidebar-background-color;
   border-radius: 4px;
   transition: all 0.2s ease-in-out;
 }
 
 .active {
-  color: #fff;
-  background-color: rgba(54, 47, 120);
+  color: $white-color-ref;
+  background-color: #362f78;
   border-radius: 4px;
 }
 

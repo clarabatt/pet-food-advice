@@ -55,7 +55,7 @@ main {
   margin: 0 2rem 2rem 2rem;
   padding: 2rem;
   margin-top: calc($menubar-height + 2rem);
-  background-color: #fff;
+  background-color: $white-color-ref;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
 }

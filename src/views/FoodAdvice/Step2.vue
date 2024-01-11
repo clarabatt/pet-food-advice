@@ -65,6 +65,7 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+@import '@/assets/variables.scss';
 .conditions-step {
   display: flex;
   flex-direction: column;
@@ -95,5 +96,14 @@ h1 {
 .icons-credit {
   margin: 4rem 0;
   font-size: 0.6rem;
+}
+
+@media only screen and (max-width: $layout-breakpoint-small) {
+  .conditions-step {
+    margin-top: 3rem;
+  }
+  .conditions {
+    max-width: 100%;
+  }
 }
 </style>
