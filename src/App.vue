@@ -4,6 +4,7 @@
     <Menubar :button-action="toggleSidebar" />
     <main>
       <RouterView />
+      <DocumentationButton />
     </main>
   </div>
 </template>
@@ -14,10 +15,11 @@ import { RouterView } from 'vue-router'
 import Sidebar from './components/Sidebar.vue'
 import Menubar from './components/Menubar.vue'
 import { useUserStore } from '@/stores/userStore'
+import DocumentationButton from '@/components/DocumentationButton.vue'
 
 export default defineComponent({
   name: 'App',
-  components: { Sidebar, Menubar, RouterView },
+  components: { Sidebar, Menubar, RouterView, DocumentationButton },
   setup() {
     const sidebarRef = ref<InstanceType<typeof Sidebar> | null>(null)
 
@@ -49,6 +51,7 @@ export default defineComponent({
 }
 
 main {
+  position: relative;
   width: 80%;
   min-height: 90%;
   box-sizing: border-box;
