@@ -24,6 +24,8 @@ outline: deep
 
 8. **Give tips about dividing the food amount throughout the day.** The front end can show a screen with different arrangements of food portions. For example, if the recommended amount is 100g, the user can divide it into two meals of 50g or three meals of 33g. Another tip we can show is to use a scale to measure the food amount at the beginning of the day and put it in a container to avoid over or under-feeding the pet.
 
+9. **Use all icons in SVG format.** It's a good practice to use SVG icons instead of PNG or JPG because they are smaller and can be scaled without losing quality. For the conditions icons, I used PNG because I downloaded them from Flaticon, and SVG is paid.
+
 ## Backend
 
 1. **Use a real database solution to store the data.** I suggest a NoSQL database because the food objects can change and gain different attributes over time, as it's not a core feature and managing a relational database would consume a lot of time.
