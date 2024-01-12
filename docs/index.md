@@ -20,6 +20,6 @@ features:
     title: Identify Health Conditions
     details: Select health conditions your pet may have
   - icon: 🍗
-    title: Receive a Recommendation
-    details: Based on a decision tree, receive a food recommendation for your pet
+    title: Get a Recommendation
+    details: Get a food recommendation for your pet
 ---
