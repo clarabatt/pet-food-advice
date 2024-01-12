@@ -35,6 +35,7 @@ export default defineComponent({
 .menubar {
   display: flex;
   position: fixed;
+  z-index: 1000;
   width: calc(100% - $sidebar-width);
   height: $menubar-height;
   background-color: $white-color-ref;

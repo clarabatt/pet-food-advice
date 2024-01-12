@@ -12,6 +12,12 @@ hero:
     - theme: alt
       text: Ideation Process
       link: /ideation-process
+    - theme: alt
+      text: Feature Enhancements
+      link: /feature-enhancements
+    - theme: alt
+      text: About Me
+      link: /about
 features:
   - icon: 🐶
     title: Select a Pet
