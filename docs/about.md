@@ -21,6 +21,19 @@ This is Lilly, a dog of a couple of friends of mine. She's a Corgi, and she's ad
 
 ## Why me?
 
+- Love pets and animals
+- ⁠Have solid experiente as a developer and frontend
+- ⁠Have experience as lead of tech teams
+- ⁠Fluent on vetster technology (proven by the project)
+- Details oriented
+- Fast learner
+- Ability to plan and build
+- Experience training other devs
+- Educational qualification
+- ⁠Knowledge about data analysis and business strategy
+
+I'm available any time to discuss the project and my experience in more detail. Feel free to contact me.
+
 [Link to my Resume](./assets/Resume_Clara.pdf)
 
 ## References
@@ -28,15 +41,21 @@ This is Lilly, a dog of a couple of friends of mine. She's a Corgi, and she's ad
 These are some people that I worked with and can give you more information about me. Feel free to contact them.
 
 1. **Verivaldo Lobo - CEO and Founder at Cubos Tecnologia**
+
    [LinkedIn](https://www.linkedin.com/in/verivaldo-lobo-3103549b) | [E-mail](mailto:verivaldo@cubos.io) | [Phone](tel:+55119956762377)
+
    [Recommendation Letter](/docs/assets/Recommendation_Letter_Verivaldo.pdf)
 
 2. **Rodrigo Araujo - CTO at InHire**
+
    [LinkedIn](https://www.linkedin.com/in/dygufa/) | [E-mail](mailto:dygufa@gmail.com) | [Phone](tel:+557198859-9772)
+
    [Recommendation Letter](/docs/assets/Recommendation_Letter_Rodrigo.pdf)
 
 3. **Thais Alonso - Head of B2B & Partnerships at Cubos Academy**
+
    [LinkedIn](https://www.linkedin.com/in/thaisfalonso) | [E-mail](mailto:thais.alonso@cubos.academy) | [Phone](tel:+5571981464991)
 
 4. **Lucas Magalhães - Head of Technology at Cubos Academy**
+
    [LinkedIn](https://www.linkedin.com/in/lucasmagalhaes/) | [E-mail](mailto:lucasmagalhaesas@gmail.com) | [Phone](tel:+16074142592)
