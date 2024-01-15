@@ -36,8 +36,4 @@ outline: deep
 
 4. **Use types to improve API reliability.**
 
-5. **Use a solution to store the encoded data to avoid processing it every time the API is called.**
-
-   > Encoded data is a table organized differently, where the columns are the attributes and the rows are the products. In this data frame, we have only `0` and `1`, where `0` means that the product doesn't have the attribute and `1` means that the product has the attribute. We only need to encode the data when the dataset changes.
-
-   ![Encoded Data](./images/encoded_data.png)
+5. **Use a cache solution to improve the API performance.** The cache can be used to store the results of the most common requests.

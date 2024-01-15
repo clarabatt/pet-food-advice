@@ -66,13 +66,35 @@ _\* That in the right corner bottom is Lola's weight track._
 
 Once I knew how it would work, I started to code it. I decided to use Python as it has a lot of libraries to help with data manipulation. I used Pandas to manipulate the data and Sklearn to create the decision model. I made a Colab Notebook to test the model and the data manipulation before using it in an API.
 
-When I started my tests, I realized that I didn't have enough data to train the model, and decision trees are the best option when you have more specific rather than general cases. I had only 100 samples, which is a ridiculous amount. Because of the difficulty of finding a dataset, getting more data was not an option. I could try a solution to randomize samples, but I wanted to keep the data as accurate as possible. So, I decided to change the algorithm.
-
-Researching algorithms, I found the **Cosine Similarity**. It determines how similar two items are. This algorithm is largely used in recommendation systems.
+When I started my tests, I realized that I didn't have enough data to train the model, and any Machine Learning algorithm would be a massive gun for this solution. I had only 100 samples, which needs more data to train the machine. Also, the samples are more general than specific, which confused the machine. Because of the difficulty of finding a dataset, getting more data was not an option. I could try a solution to randomize samples, but I wanted to keep the data as accurate as possible. So, I decided to change my solution approach.
 
 [You can check my Google Colab notebook with the tests here](https://colab.research.google.com/drive/1iEG3p1saytlS0wGL7Upbh8W7b5FDvt1t?usp=sharing)
 
 ![Recommendation Algorithm Tests](./images/recommendation-model.png)
+
+My second challenge was to make the algorithm work following some basic rules that I had determined. The rules were vital to giving a relevant recommendation to the user. My results were not according to the rules, so I had to change the algorithm to make it work.
+
+**Recommend Rules:**
+
+1. I cannot recommend food of different sizes.
+    For example, I must not recommend food for large dogs for small ones.
+2. I cannot recommend food of different life stages.
+    For example, for senior dogs, I must not recommend food for puppies or vice versa.
+3. Breed is not a must. I can offer food for its specific breed or general ones.
+4. A health condition can be attended or not, but **I must not recommend food for a health condition the animal doesn't have.**
+
+This approach can be improved in the future, but it was enough to show the feature working.
+I divided it into two functions, one to recommend the food and another to rank the options that were filtered before. This way, we can isolate the logic and make it easier to maintain and improve in the future. For example, we can use Machine Learning to improve only the ranking part instead of the whole algorithm.
+
+**Ranking rules priority order:**
+
+1. Food that has condition has priority
+2. Food that matches the size or life_stage has priority
+3. Food that matches the breed
+
+> That list can be increased in the future. For example, give a higher score for the food with a lower price or a great review by our veterinarian community.
+
+[This is my second Colab notebook. I used to test the second approach](https://colab.research.google.com/drive/1mA5zkMBLiQ5bXgurYvljI4sk2PK4pRXw#scrollTo=lWtwG8dHeIXs)
 
 ### Backend
 

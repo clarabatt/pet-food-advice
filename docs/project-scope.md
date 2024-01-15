@@ -2,6 +2,12 @@
 
 This is a project to emulate a possible feature of Vetster's website, **the Pet Food Advisor**. It's a simple feature to helps pet owners to choose the best food for their pets.
 
+![Choosing a Pet](./images/screenshot_1.png)
+
+![Choosing animal's health conditions](./images/screenshot_2.png)
+
+![Receiving the foods recommendations](./images/screenshot_3.png)
+
 ## Why this feature?
 
 As a pet owner, I know that the food I give to my dog is very important for her health, it's directly related to her quality of life. Recently, I got into two situations that made me change Lola's food brand. The first one was when we moved to Canada, since the food brand she used to eat in Brazil is not available here. The second one was when the veterinarian told me she was overweight and I had to change her food to a low calorie one. Moreover, it was difficult to understand how many calories she should eat per day, and how much food I should give her.

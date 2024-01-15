@@ -4,7 +4,7 @@
 
 I've always been passionate about animals, and I lived around them since I was a child. I had or used to interact with dogs, cats, cows, horses, birds, fishes, hamsters, rabbits, and even a goat named Little Louis (Luizinho in Portuguese).
 
-When I was 5 I used to ask my grandpa to take me to see a cow called Mel. I loved to pet her and touch her soft skin. My grandpa used to say I'll be a veterinarian when I grow up. Obviously, I didn't become a veterinarian, but I'm still passionate about animals. I'm the person who plays with the dog at the party instead of talking to people.
+When I was 5 I used to ask my grandpa to take me to see a cow called Mel. I loved to pet her and touch her soft skin. My grandpa used to say I'll be a veterinarian when I grow up. I didn't become a veterinarian, but I'm still passionate about animals. I'm the person who plays with the dog at the party instead of talking to people.
 
 ![Childhood](./images/childhood.jpg)
 
@@ -44,13 +44,13 @@ These are some people that I worked with and can give you more information about
 
    [LinkedIn](https://www.linkedin.com/in/verivaldo-lobo-3103549b) | [E-mail](mailto:verivaldo@cubos.io) | [Phone](tel:+55119956762377)
 
-   [Recommendation Letter](/docs/assets/Recommendation_Letter_Verivaldo.pdf)
+   [Recommendation Letter](./assets/Recommendation_Letter_Verivaldo.pdf)
 
 2. **Rodrigo Araujo - CTO at InHire**
 
    [LinkedIn](https://www.linkedin.com/in/dygufa/) | [E-mail](mailto:dygufa@gmail.com) | [Phone](tel:+557198859-9772)
 
-   [Recommendation Letter](/docs/assets/Recommendation_Letter_Rodrigo.pdf)
+   [Recommendation Letter](./assets/Recommendation_Letter_Rodrigo.pdf)
 
 3. **Thais Alonso - Head of B2B & Partnerships at Cubos Academy**
 
