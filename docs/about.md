@@ -34,7 +34,7 @@ This is Lilly, a dog of a couple of friends of mine. She's a Corgi, and she's ad
 
 I'm available any time to discuss the project and my experience in more detail. Feel free to contact me.
 
-[Link to my Resume](./assets/Resume_Clara.pdf)
+[Link to my Resume](/Resume_Clara.pdf)
 
 ## References
 
@@ -44,13 +44,13 @@ These are some people that I worked with and can give you more information about
 
    [LinkedIn](https://www.linkedin.com/in/verivaldo-lobo-3103549b) | [E-mail](mailto:verivaldo@cubos.io) | [Phone](tel:+55119956762377)
 
-   [Recommendation Letter](./assets/Recommendation_Letter_Verivaldo.pdf)
+   [Recommendation Letter](/Recommendation_Letter_Verivaldo.pdf)
 
 2. **Rodrigo Araujo - CTO at InHire**
 
    [LinkedIn](https://www.linkedin.com/in/dygufa/) | [E-mail](mailto:dygufa@gmail.com) | [Phone](tel:+557198859-9772)
 
-   [Recommendation Letter](./assets/Recommendation_Letter_Rodrigo.pdf)
+   [Recommendation Letter](/Recommendation_Letter_Rodrigo.pdf)
 
 3. **Thais Alonso - Head of B2B & Partnerships at Cubos Academy**
 
