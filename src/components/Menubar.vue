@@ -42,6 +42,7 @@ export default defineComponent({
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 1.5rem;
   padding: 1rem 2rem;
+  z-index: 1111;
 }
 
 .menu-icon {

@@ -85,6 +85,7 @@ export default defineComponent({
   align-items: flex-start;
   justify-content: center;
   padding: 1rem;
+  width: 70%;
 }
 
 .stats > .description > .brand {

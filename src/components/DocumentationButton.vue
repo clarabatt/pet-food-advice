@@ -18,7 +18,7 @@ export default defineComponent({
   },
   data() {
     return {
-      documentationLink: 'https://docs-pet-food-advice.firebaseapp.com/ideation-process.html'
+      documentationLink: 'https://docs-pet-food-advice.firebaseapp.com'
     }
   }
 })
