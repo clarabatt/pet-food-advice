@@ -66,13 +66,11 @@ As they use Tailwind UI, I've tried my best to mimic the components without spen
 ### Backend
 
 - Python
-- Pandas
-- SciKit Learn
 - Azure Functions
 
 I chose Python as my backend language for two reasons. First, I wanted to work with some Data Science or Machine Learning tools in this project, and **Python is the most used language in this area with several libraries available.** Second, I've worked with Python for data purposes in my last experience, so it's a familiar technology.
 
-In the Python code, I used pandas to manipulate the data, as Dataframes and SciKit Learn to have access to models to train and predict the data. I first changed the algorithm that I had in mind (Decision Tree), as I didn't have a data volume, and it was presented as not the best option for this case. I detailed more about the algorithm in the [Data and Recommendation Algorithm](/ideation-process.md#data-and-recommendation-algorithm) section.
+I detailed more about the algorithm in the [Data and Recommendation Algorithm](/ideation-process.md#data-and-recommendation-algorithm) section.
 
 Azure Functions was my choice to deploy the backend code for three reasons:
 
