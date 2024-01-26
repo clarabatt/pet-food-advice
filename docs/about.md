@@ -7,13 +7,9 @@ When I was 5 I used to ask my grandpa to take me to see a cow called Mel. I love
 ![Childhood](./images/childhood.jpg)
 
 I have a dog named Lola. She was rescued from the streets in Brazil by a friend of mine who found her and her siblings in a box. She was 45 days old when I adopted her. We don't know her breed, and I don't care about it. 
-When we moved to Canada, we brought her with us. She loved the cold weather and the park in front of our home. She's very happy here, and this is the most important thing for me.
+When we moved to Canada, we brought her with us. She loved the cold weather and the park in front of our home. She's very happy here, and this is the most important thing for me. She is my soul dog <3
 
 ![Lola and Me](./images/lola.jpg)
-
-This is Lilly, a dog of a couple of friends of mine. She's a Corgi, and she's adorable. I taught her some tricks like sitting, lying down, giving me her paw, and rolling over. She's very smart and learns fast.
-
-![Lilly and me](./images/lilly.jpg)
 
 ## Why me?
 
